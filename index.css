@@ -1,0 +1,115 @@
+body {
+    background-image: url(https://images.pexels.com/photos/29732975/pexels-photo-29732975/free-photo-of-vast-sunflower-field-under-clear-blue-sky.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    margin-top: 3rem;
+    font-size: 3rem;
+    color: white;
+}
+
+.box {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+.box input {
+    border: none;
+    padding: 10px 10px;
+    width: 80%;
+}
+
+.box button {
+    margin-left: 1rem;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #737B7C;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.add-box {  
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    margin: auto;
+}
+.div {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.div span {
+    font-size: 1rem;
+    word-break: break-word;
+}
+
+.btn-div {
+    display: flex;
+    gap: 10px;
+}
+.add-box #delete {
+    margin-left: 1rem;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.add-box #complete {
+    margin-left: 1rem;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    
+
+    .box {
+        flex-direction: column;
+    }
+    .box input{
+        width: 100%;
+        margin: auto;
+    }
+    .box #add {
+        margin-top: 5px;
+        width: 80%;
+        
+    }
+
+    .div {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-div {
+        justify-content: space-between;
+    }
+}
