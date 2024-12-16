@@ -1,27 +1,46 @@
-let input=document.querySelector("input");
-let addbutton=document.querySelector("#add");
-let addbox=document.querySelector(".add-box")
+const addButton = document.getElementById('add-todo-button');
+const todoInput = document.getElementById('todo-input');
+const taskList = document.getElementById('task-list');
 
-addbutton.addEventListener("click",(e)=>{
-    e.preventDefault();
-    let text=input.value.trim();
-    let div1=document.createElement("div");
-    div1.classList.add("div");
-    div1.innerHTML= `
-    <span>${text}</span>
-    <div class="btn-div">
-        <button id = "delete">Delete</button>
-        <button id ="complete">Complete</button>
-    </div>
-    `;
-    addbox.appendChild(div1);
-    input.value="";
-   div1.querySelector("#delete").addEventListener("click",()=>{
-    addbox.removeChild(div1);
-   })
-   div1.querySelector("#complete").addEventListener("click",()=>{
-      div1.querySelector("span").style.textDecoration="line-through";
-   })
-})
+addButton.addEventListener('click', function () {
+    const taskText = todoInput.value;
+    if (taskText) {
+        const li = document.createElement('li');
 
+        const taskSpan = document.createElement('span');
+        taskSpan.textContent = taskText;
 
+        const timestamp = document.createElement('span');
+        const currentTime = new Date();
+        timestamp.textContent = ` (${currentTime.toLocaleTimeString()})`;
+        timestamp.style.marginLeft = "10px";
+        timestamp.style.fontSize = "0.9rem";
+        timestamp.style.color = "gray";
+
+        const completeButton = document.createElement('button');
+        completeButton.textContent = 'Complete';
+        completeButton.id = 'complete-button';
+        completeButton.addEventListener('click', function () {
+            li.classList.toggle('completed');
+        });
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.id = 'delete-button';
+        deleteButton.addEventListener('click', function () {
+            taskList.removeChild(li);
+        });
+
+        const buttonContainer = document.createElement('div');
+        buttonContainer.className = 'task-buttons';
+        buttonContainer.appendChild(completeButton);
+        buttonContainer.appendChild(deleteButton);
+
+        li.appendChild(taskSpan);
+        li.appendChild(timestamp);
+        li.appendChild(buttonContainer);
+        taskList.appendChild(li);
+
+        todoInput.value = '';
+    }
+});

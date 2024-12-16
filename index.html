@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo App</title>
+    <title>Todo List</title>
     <link rel="stylesheet" href="./index.css">
-    <script src="./index.js" defer></script>
 </head>
+
 <body>
-    <h1>Todo List</h1>
-    <div class="box">
-        <input type="text" placeholder="Add a New Task..."><button id="add">Add todo</button>
+    <div class="container">
+        <h1>Todo List</h1>
+        <input type="text" id="todo-input" placeholder="Add a new task...">
+        <button id="add-todo-button">Add todo</button>
+        <ul id="task-list"></ul>
     </div>
-    <div class="add-box">
-    </div>
+
+    <script src="./index.js"></script>
 </body>
+
 </html>

@@ -1,115 +1,131 @@
 body {
-    background-image: url(https://images.pexels.com/photos/29732975/pexels-photo-29732975/free-photo-of-vast-sunflower-field-under-clear-blue-sky.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://images.pexels.com/photos/29732975/pexels-photo-29732975/free-photo-of-vast-sunflower-field-under-clear-blue-sky.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    color: white;
+}
+
+.container {
     text-align: center;
-    margin: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
 }
 
 h1 {
-    margin-top: 3rem;
-    font-size: 3rem;
-    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: black;
 }
 
-.box {
-    text-align: center;
-    width: 50%;
-    margin: auto;
-}
-
-.box input {
-    border: none;
-    padding: 10px 10px;
-    width: 80%;
-}
-
-.box button {
-    margin-left: 1rem;
+input[type="text"] {
+    width: 75%;
     padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
     font-size: 1rem;
-    background-color: #737B7C;
-    border: none;
-    border-radius: 10px;
-    color: white;
 }
 
-.add-box {  
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 50%;
-    margin: auto;
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
 }
-.div {
+
+#add-todo-button {
+    background-color: gray;
+    color: white;
     margin-top: 20px;
+}
+
+#add-todo-button:hover {
+    background-color: darkgray;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#task-list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
     padding: 10px;
-    background-color: #f1f1f1;
+    margin: 10px 0;
     border-radius: 5px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: black;
 }
 
-.div span {
-    font-size: 1rem;
-    word-break: break-word;
-}
-
-.btn-div {
+.task-buttons {
     display: flex;
     gap: 10px;
 }
-.add-box #delete {
-    margin-left: 1rem;
-    padding: 10px;
-    font-size: 1rem;
+
+#delete-button {
     background-color: red;
-    border: none;
-    border-radius: 10px;
     color: white;
 }
 
-.add-box #complete {
-    margin-left: 1rem;
-    padding: 10px;
-    font-size: 1rem;
+#delete-button:hover {
+    background-color: darkred;
+}
+
+#complete-button {
     background-color: green;
-    border: none;
-    border-radius: 10px;
     color: white;
 }
 
+#complete-button:hover {
+    background-color: darkgreen;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
 
 @media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
     h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
-    
+    input[type="text"] {
+        width: 70%;
+        font-size: 0.9rem;
+    }
 
-    .box {
+    button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    #task-list li {
         flex-direction: column;
-    }
-    .box input{
-        width: 100%;
-        margin: auto;
-    }
-    .box #add {
-        margin-top: 5px;
-        width: 80%;
-        
+        align-items: flex-start;
     }
 
-    .div {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .btn-div {
-        justify-content: space-between;
+    .task-buttons {
+        margin-top: 10px;
+        justify-content: flex-start;
     }
 }
